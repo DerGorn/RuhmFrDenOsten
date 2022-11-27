@@ -1,0 +1,36 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://BasicFont.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Slinput.gd" type="Script" id=2]
+[ext_resource path="res://SlinputSlider.gd" type="Script" id=3]
+
+[node name="SlinputSlider" type="HSlider"]
+margin_left = 500.0
+margin_top = 120.0
+margin_right = 700.0
+margin_bottom = 136.0
+script = ExtResource( 3 )
+maximum = 300
+
+[node name="Slinput" type="Label" parent="."]
+anchor_left = -0.127
+anchor_top = -2.516
+anchor_right = 0.26
+anchor_bottom = 2.582
+margin_left = 33.4
+margin_top = -32.744
+margin_right = 134.0
+margin_bottom = 48.688
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 3
+custom_constants/shadow_offset_y = 3
+custom_constants/shadow_as_outline = 1
+custom_fonts/font = ExtResource( 1 )
+text = "0
+"
+align = 1
+script = ExtResource( 2 )
+
+[connection signal="value_changed" from="." to="Slinput" method="_on_SlinputSlider_value_changed"]

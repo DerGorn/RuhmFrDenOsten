@@ -1,0 +1,199 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://CityProgress.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/Bilder/Map.png" type="Texture" id=2]
+[ext_resource path="res://MainCam.gd" type="Script" id=3]
+[ext_resource path="res://Map.gd" type="Script" id=4]
+[ext_resource path="res://CityMenu.tscn" type="PackedScene" id=5]
+
+[sub_resource type="StyleBoxLine" id=1]
+resource_local_to_scene = true
+color = Color( 0.277344, 0.257708, 0.255676, 1 )
+thickness = 3
+
+[node name="Map" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="MapBackground" type="TextureRect" parent="."]
+margin_right = 1200.0
+margin_bottom = 1532.0
+rect_scale = Vector2( 2.134, 2.134 )
+texture = ExtResource( 2 )
+
+[node name="MainCam" type="Camera2D" parent="."]
+position = Vector2( 1194, 654 )
+current = true
+limit_left = 0
+limit_top = 0
+limit_right = 2560
+limit_bottom = 3269
+editor_draw_limits = true
+script = ExtResource( 3 )
+
+[node name="Tween" type="Tween" parent="MainCam"]
+
+[node name="Neubrandenburg" parent="." instance=ExtResource( 1 )]
+margin_left = 1573.0
+margin_top = 787.0
+margin_right = 1829.0
+margin_bottom = 1043.0
+rect_scale = Vector2( 0.5, 0.5 )
+cityName = "Neubrandenburg"
+
+[node name="Schwerin" parent="." instance=ExtResource( 1 )]
+margin_left = 752.0
+margin_top = 744.0
+margin_right = 1008.0
+margin_bottom = 1000.0
+rect_scale = Vector2( 0.5, 0.5 )
+cityName = "Schwerin"
+resources = [ "Stone" ]
+
+[node name="Rostock" parent="." instance=ExtResource( 1 )]
+margin_left = 1068.0
+margin_top = 391.0
+margin_right = 1324.0
+margin_bottom = 647.0
+rect_scale = Vector2( 0.5, 0.5 )
+cityName = "Rostock"
+resources = [ "Wood" ]
+
+[node name="Magdeburg" parent="." instance=ExtResource( 1 )]
+margin_left = 837.0
+margin_top = 1759.0
+margin_right = 1093.0
+margin_bottom = 2015.0
+rect_scale = Vector2( 0.5, 0.5 )
+cityName = "Magdeburg"
+
+[node name="Potsdam" parent="." instance=ExtResource( 1 )]
+margin_left = 1416.0
+margin_top = 1558.0
+margin_right = 1672.0
+margin_bottom = 1814.0
+rect_scale = Vector2( 0.5, 0.5 )
+cityName = "Potsdam"
+
+[node name="Berlin" parent="." instance=ExtResource( 1 )]
+margin_left = 1679.0
+margin_top = 1505.0
+margin_right = 1935.0
+margin_bottom = 1761.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="Frankfurt" parent="." instance=ExtResource( 1 )]
+margin_left = 2069.0
+margin_top = 1631.0
+margin_right = 2325.0
+margin_bottom = 1887.0
+rect_scale = Vector2( 0.5, 0.5 )
+cityName = "Frankfurt"
+
+[node name="Erfurt" parent="." instance=ExtResource( 1 )]
+margin_left = 528.0
+margin_top = 2537.0
+margin_right = 784.0
+margin_bottom = 2793.0
+rect_scale = Vector2( 0.5, 0.5 )
+cityName = "Erfurt"
+
+[node name="Halle" parent="." instance=ExtResource( 1 )]
+margin_left = 959.0
+margin_top = 2226.0
+margin_right = 1215.0
+margin_bottom = 2482.0
+rect_scale = Vector2( 0.5, 0.5 )
+cityName = "Halle"
+
+[node name="Leipzig" parent="." instance=ExtResource( 1 )]
+margin_left = 1197.0
+margin_top = 2312.0
+margin_right = 1453.0
+margin_bottom = 2568.0
+rect_scale = Vector2( 0.5, 0.5 )
+cityName = "Leipzig"
+
+[node name="Cottbus" parent="." instance=ExtResource( 1 )]
+margin_left = 1988.0
+margin_top = 1998.0
+margin_right = 2244.0
+margin_bottom = 2254.0
+rect_scale = Vector2( 0.5, 0.5 )
+cityName = "Cottbus"
+
+[node name="Suhl" parent="." instance=ExtResource( 1 )]
+margin_left = 361.0
+margin_top = 2764.0
+margin_right = 617.0
+margin_bottom = 3020.0
+rect_scale = Vector2( 0.5, 0.5 )
+cityName = "Suhl"
+
+[node name="Gera" parent="." instance=ExtResource( 1 )]
+margin_left = 972.0
+margin_top = 2612.0
+margin_right = 1228.0
+margin_bottom = 2868.0
+rect_scale = Vector2( 0.5, 0.5 )
+cityName = "Gera"
+
+[node name="Karl-Marx-Stadt" parent="." instance=ExtResource( 1 )]
+margin_left = 1443.0
+margin_top = 2632.0
+margin_right = 1699.0
+margin_bottom = 2888.0
+rect_scale = Vector2( 0.5, 0.5 )
+cityName = "Karl-Marx-Stadt"
+
+[node name="Dresden" parent="." instance=ExtResource( 1 )]
+margin_left = 1809.0
+margin_top = 2460.0
+margin_right = 2065.0
+margin_bottom = 2716.0
+rect_scale = Vector2( 0.305264, 0.391201 )
+cityName = "Dresden"
+
+[node name="CityMenu" parent="." instance=ExtResource( 5 )]
+city_name = "Berlin"
+
+[node name="HSeparator" parent="CityMenu" index="2"]
+custom_styles/separator = SubResource( 1 )
+
+[node name="MenuCam" type="Camera2D" parent="CityMenu"]
+position = Vector2( 954, 534 )
+
+[connection signal="in_menu" from="." to="MainCam" method="_on_Map_in_menu"]
+[connection signal="in_menu" from="." to="Neubrandenburg" method="toggle_pause"]
+[connection signal="in_menu" from="." to="Schwerin" method="toggle_pause"]
+[connection signal="in_menu" from="." to="Rostock" method="toggle_pause"]
+[connection signal="in_menu" from="." to="Magdeburg" method="toggle_pause"]
+[connection signal="in_menu" from="." to="Potsdam" method="toggle_pause"]
+[connection signal="in_menu" from="." to="Berlin" method="toggle_pause"]
+[connection signal="in_menu" from="." to="Frankfurt" method="toggle_pause"]
+[connection signal="in_menu" from="." to="Erfurt" method="toggle_pause"]
+[connection signal="in_menu" from="." to="Halle" method="toggle_pause"]
+[connection signal="in_menu" from="." to="Leipzig" method="toggle_pause"]
+[connection signal="in_menu" from="." to="Cottbus" method="toggle_pause"]
+[connection signal="in_menu" from="." to="Suhl" method="toggle_pause"]
+[connection signal="in_menu" from="." to="Gera" method="toggle_pause"]
+[connection signal="in_menu" from="." to="Karl-Marx-Stadt" method="toggle_pause"]
+[connection signal="in_menu" from="." to="Dresden" method="toggle_pause"]
+[connection signal="click_city" from="Neubrandenburg" to="." method="_on_click_city" binds= [ "Neubrandenburg" ]]
+[connection signal="click_city" from="Schwerin" to="." method="_on_click_city" binds= [ "Schwerin" ]]
+[connection signal="click_city" from="Rostock" to="." method="_on_click_city" binds= [ "Rostock" ]]
+[connection signal="click_city" from="Magdeburg" to="." method="_on_click_city" binds= [ "Magdeburg" ]]
+[connection signal="click_city" from="Potsdam" to="." method="_on_click_city" binds= [ "Potsdam" ]]
+[connection signal="click_city" from="Berlin" to="." method="_on_click_city" binds= [ "Berlin" ]]
+[connection signal="click_city" from="Frankfurt" to="." method="_on_click_city" binds= [ "Frankfurt" ]]
+[connection signal="click_city" from="Erfurt" to="." method="_on_click_city" binds= [ "Erfurt" ]]
+[connection signal="click_city" from="Halle" to="." method="_on_click_city" binds= [ "Halle" ]]
+[connection signal="click_city" from="Leipzig" to="." method="_on_click_city" binds= [ "Leipzig" ]]
+[connection signal="click_city" from="Cottbus" to="." method="_on_click_city" binds= [ "Cottbus" ]]
+[connection signal="click_city" from="Suhl" to="." method="_on_click_city" binds= [ "Suhl" ]]
+[connection signal="click_city" from="Gera" to="." method="_on_click_city" binds= [ "Gera" ]]
+[connection signal="click_city" from="Karl-Marx-Stadt" to="." method="_on_click_city" binds= [ "Karl-Marx-Stadt" ]]
+[connection signal="click_city" from="Dresden" to="." method="_on_click_city" binds= [ "Dresden" ]]
+[connection signal="close_menu" from="CityMenu" to="." method="_on_click_city" binds= [ "" ]]
+[connection signal="transaction" from="CityMenu" to="." method="_on_CityMenu_transaction"]
+
+[editable path="CityMenu"]
